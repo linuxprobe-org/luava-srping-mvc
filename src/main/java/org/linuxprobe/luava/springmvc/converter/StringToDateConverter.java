@@ -10,6 +10,7 @@ import java.util.Set;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.core.convert.converter.Converter;
 
+/** String转Date */
 public class StringToDateConverter implements Converter<String, Date> {
 	public Map<String, SimpleDateFormat> dateFormatMap;
 
