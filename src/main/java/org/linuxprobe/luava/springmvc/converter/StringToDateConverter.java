@@ -27,12 +27,18 @@ public class StringToDateConverter implements Converter<String, Date> {
 		dateFormatMap.put("^[0-9]{4}-[0-9]{2}-[0-9]{2}\\s[0-9]{2}:[0-9]{2}:[0-9]{2}$",
 				new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
 		dateFormatMap.put("^[0-9]{4}-[0-9]{2}-[0-9]{2}$", new SimpleDateFormat("yyyy-MM-dd"));
+		dateFormatMap.put("^[0-9]{2}/[0-9]{2}/[0-9]{4}$", new SimpleDateFormat("MM/dd/yyyy"));
+		dateFormatMap.put("^[0-9]{2}/[0-9]{2}/[0-9]{4}\\s[0-9]{2}:[0-9]{2}:[0-9]{2}$",
+				new SimpleDateFormat("MM/dd/yyyy HH:mm:ss"));
 	}
 
 	@Override
 	public Date convert(String source) {
 		if (StringUtils.isBlank(source)) {
 			return null;
+		}
+		if (source.matches("^[0-9]+$")) {
+			return new Date(Long.valueOf(source));
 		}
 		Set<String> regexs = dateFormatMap.keySet();
 		SimpleDateFormat simpleDateFormat = null;
