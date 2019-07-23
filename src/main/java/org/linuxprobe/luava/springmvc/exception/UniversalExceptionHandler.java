@@ -23,14 +23,14 @@ public abstract class UniversalExceptionHandler {
 	/**
 	 * 处理ajax请求异常
 	 */
-	public abstract ModelAndView handleAjaxRequest(HttpServletRequest request, HttpServletResponse response,
+	public abstract Object handleAjaxRequest(HttpServletRequest request, HttpServletResponse response,
 			HandlerMethod handler, Throwable exception);
 
 	/**
 	 * 处理非ajax请求异常
 	 */
-	public ModelAndView handleOtherRequest(HttpServletRequest request, HttpServletResponse response,
-			HandlerMethod handler, Throwable exception) {
+	public Object handleOtherRequest(HttpServletRequest request, HttpServletResponse response, HandlerMethod handler,
+			Throwable exception) {
 		return this.handleAjaxRequest(request, response, handler, exception);
 	}
 
