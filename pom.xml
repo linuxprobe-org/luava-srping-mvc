@@ -37,7 +37,7 @@
 
 	<groupId>org.linuxprobe</groupId>
 	<artifactId>luava-spring-mvc</artifactId>
-	<version>0.0.5.RS1</version>
+	<version>0.0.5.RS2</version>
 	<packaging>jar</packaging>
 	<name>luava-spring-mvc</name>
 	<description>luava-spring-mvc</description>
@@ -77,7 +77,7 @@
 		<dependency>
 			<groupId>org.linuxprobe</groupId>
 			<artifactId>luava-http</artifactId>
-			<version>0.0.7.RELEASE</version>
+			<version>0.0.8.RS1</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
