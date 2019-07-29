@@ -37,7 +37,7 @@
 
 	<groupId>org.linuxprobe</groupId>
 	<artifactId>luava-spring-mvc</artifactId>
-	<version>0.0.5.RS2</version>
+	<version>0.0.5.RS3</version>
 	<packaging>jar</packaging>
 	<name>luava-spring-mvc</name>
 	<description>luava-spring-mvc</description>
