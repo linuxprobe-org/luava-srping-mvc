@@ -3,7 +3,7 @@ package org.linuxprobe.luava.springmvc.exception;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.linuxprobe.luava.http.HttpServletUtils;
+import org.linuxprobe.luava.servlet.HttpServletUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -17,7 +17,6 @@ import lombok.extern.slf4j.Slf4j;
  * 通用异常处理,
  * 请在实现类上注解{@link org.springframework.web.bind.annotation.ControllerAdvice}
  */
-@ResponseBody
 @Slf4j
 public abstract class UniversalExceptionHandler {
 	/**
@@ -34,6 +33,7 @@ public abstract class UniversalExceptionHandler {
 		return this.handleAjaxRequest(request, response, handler, exception);
 	}
 
+	@ResponseBody
 	@ExceptionHandler(Throwable.class)
 	public Object handleMissingServletRequestParameterException(HttpServletRequest request,
 			HttpServletResponse response, Throwable exception, HandlerMethod handlerMethod) {
