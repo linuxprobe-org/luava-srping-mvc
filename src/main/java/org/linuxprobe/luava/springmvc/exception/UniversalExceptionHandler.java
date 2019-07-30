@@ -14,7 +14,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * 通用异常处理,
- * 请在实现类上注解{@link org.springframework.web.bind.annotation.ControllerAdvice}
+ * 请在实现类上注解{@link org.springframework.web.bind.annotation.RestControllerAdvice}
+ * <p>
+ * 并重写{@link #handleAjaxRequest}方法, 可根据自己需求决定是否重写{@link #handleOtherRequest}方法来处理非ajax请求, 该方法默认调用{@link #handleAjaxRequest}
+ * <p/>
  */
 @Slf4j
 public abstract class UniversalExceptionHandler {
