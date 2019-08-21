@@ -11,6 +11,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 
 /**
  * 通用异常处理,
@@ -36,8 +38,13 @@ public abstract class UniversalExceptionHandler {
     @ResponseBody
     @ExceptionHandler(Throwable.class)
     public Object handleException(HttpServletRequest request, HttpServletResponse response, Throwable exception, HandlerMethod handlerMethod) {
-        if (UniversalExceptionHandler.log.isErrorEnabled()) {
-            UniversalExceptionHandler.log.error("", exception);
+        if (log.isErrorEnabled()) {
+            log.error("Controller:{}, Method:{}, URI:{}, Content-Type:{} ,异常信息:{}",
+                    handlerMethod.getBeanType().getName(),
+                    handlerMethod.getMethod().getName(),
+                    request.getRequestURI(),
+                    request.getHeader("Content-Type"),
+                    getStackTrace(exception));
         }
         boolean isResponseBody = false;
         Class<?> returnType = handlerMethod.getMethod().getReturnType();
@@ -57,6 +64,17 @@ public abstract class UniversalExceptionHandler {
             return this.handleAjaxRequest(request, response, handlerMethod, exception);
         } else {
             return this.handleOtherRequest(request, response, handlerMethod, exception);
+        }
+    }
+
+    public static String getStackTrace(Throwable t) {
+        StringWriter sw = new StringWriter();
+        PrintWriter pw = new PrintWriter(sw);
+        try {
+            t.printStackTrace(pw);
+            return sw.toString();
+        } finally {
+            pw.close();
         }
     }
 }
