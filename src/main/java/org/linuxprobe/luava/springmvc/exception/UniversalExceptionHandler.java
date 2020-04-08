@@ -70,11 +70,9 @@ public abstract class UniversalExceptionHandler {
     public static String getStackTrace(Throwable t) {
         StringWriter sw = new StringWriter();
         PrintWriter pw = new PrintWriter(sw);
-        try {
-            t.printStackTrace(pw);
-            return sw.toString();
-        } finally {
-            pw.close();
-        }
+        t.printStackTrace(pw);
+        pw.close();
+        return sw.toString().replaceAll("[\r\n]+", "\\\\n").replaceAll("[\n]+", "\\\\n")
+                .replaceAll("[\t]+", "\\\\t");
     }
 }
