@@ -1,7 +1,8 @@
 package org.linuxprobe.luava.springmvc.exception;
 
-import lombok.extern.slf4j.Slf4j;
 import org.linuxprobe.luava.servlet.HttpServletUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -21,8 +22,9 @@ import java.io.StringWriter;
  * 并重写{@link #handleAjaxRequest}方法, 可根据自己需求决定是否重写{@link #handleOtherRequest}方法来处理非ajax请求, 该方法默认调用{@link #handleAjaxRequest}
  * <p/>
  */
-@Slf4j
 public abstract class UniversalExceptionHandler {
+    private static final Logger log = LoggerFactory.getLogger(UniversalExceptionHandler.class);
+
     /**
      * 处理ajax请求异常
      */
@@ -72,7 +74,6 @@ public abstract class UniversalExceptionHandler {
         PrintWriter pw = new PrintWriter(sw);
         t.printStackTrace(pw);
         pw.close();
-        return sw.toString().replaceAll("[\r\n]+", "\\\\n").replaceAll("[\n]+", "\\\\n")
-                .replaceAll("[\t]+", "\\\\t");
+        return sw.toString();
     }
 }

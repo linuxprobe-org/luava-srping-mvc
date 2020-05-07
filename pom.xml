@@ -37,7 +37,7 @@
 
     <groupId>org.linuxprobe</groupId>
     <artifactId>luava-spring-mvc</artifactId>
-    <version>0.0.6.RS1</version>
+    <version>0.0.6.RS2</version>
     <packaging>jar</packaging>
     <name>luava-spring-mvc</name>
     <description>luava-spring-mvc</description>
@@ -50,20 +50,15 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
-        <spring.vsersion>5.2.5.RELEASE</spring.vsersion>
+        <spring.vsersion>5.2.6.RELEASE</spring.vsersion>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>4.13</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.4</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -73,7 +68,7 @@
         <dependency>
             <groupId>org.linuxprobe</groupId>
             <artifactId>luava-servlet</artifactId>
-            <version>0.0.4.RELEASE</version>
+            <version>0.0.5.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
