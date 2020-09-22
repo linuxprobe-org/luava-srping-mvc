@@ -1,5 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <licenses>
@@ -37,7 +37,7 @@
 
     <groupId>org.linuxprobe</groupId>
     <artifactId>luava-spring-mvc</artifactId>
-    <version>0.0.6.RS2</version>
+    <version>0.0.6.RS3</version>
     <packaging>jar</packaging>
     <name>luava-spring-mvc</name>
     <description>luava-spring-mvc</description>
@@ -50,7 +50,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
-        <spring.vsersion>5.2.6.RELEASE</spring.vsersion>
+        <spring.vsersion>5.2.8.RELEASE</spring.vsersion>
     </properties>
 
     <dependencies>
@@ -68,7 +68,7 @@
         <dependency>
             <groupId>org.linuxprobe</groupId>
             <artifactId>luava-servlet</artifactId>
-            <version>0.0.5.RELEASE</version>
+            <version>0.0.6.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
