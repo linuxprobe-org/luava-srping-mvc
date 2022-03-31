@@ -50,7 +50,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
-        <spring.vsersion>5.2.8.RELEASE</spring.vsersion>
+        <spring.vsersion>5.3.18</spring.vsersion>
     </properties>
 
     <dependencies>
