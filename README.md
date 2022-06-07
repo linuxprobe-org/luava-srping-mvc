@@ -4,6 +4,6 @@
 <dependency>
   <groupId>org.linuxprobe</groupId>
   <artifactId>luava-spring-mvc</artifactId>
-  <version>0.0.5.RS4</version>
+  <version>0.0.7</version>
 </dependency>
 ```
